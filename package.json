@@ -1,0 +1,29 @@
+{
+  "name": "multi-agent-orchestrator",
+  "version": "1.0.0",
+  "description": "TypeScript/Node HTTP API system orchestrating multi-agent C code compilation and patching.",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "test": "npm run build && node --test dist/tests/**/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Geetarty/multi-agent-orchestrator.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Geetarty/multi-agent-orchestrator/issues"
+  },
+  "homepage": "https://github.com/Geetarty/multi-agent-orchestrator#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.1",
+    "typescript": "^6.0.3"
+  }
+}
