@@ -1,0 +1,36 @@
+{
+  "name": "orchestrator-cli",
+  "version": "1.0.0",
+  "description": "CLI client for multi-agent code orchestrator backend.",
+  "main": "dist/index.js",
+  "type": "commonjs",
+  "bin": {
+    "orchestrator": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json && node dist/index.js",
+    "start": "node dist/index.js",
+    "test": "npm run build && node --test dist/tests/**/*.test.js"
+  },
+  "keywords": [
+    "orchestrator",
+    "cli",
+    "code-generation",
+    "multi-agent"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "chalk": "^4.1.2",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "ora": "^5.4.1",
+    "table": "^6.8.1"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orchestrator Dashboard</title>
+  <link rel="stylesheet" href="frontend/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🤖 Orchestrator Dashboard</h1>
+      <div id="statusBadge" class="status offline">⏳ Checking...</div>
+    </header>
+
+    <div class="main-layout">
+      <div class="left-column">
+        <section class="panel">
+          <h2>Owner Requirements</h2>
+          <div class="requirements-display">No requirements set</div>
+          <button id="setRequirementsBtn" class="btn">▶ Set Requirements</button>
+          <form id="setRequirementsForm" style="display: none;">
+            <textarea id="requirementsInput" placeholder="Paste JSON here..." rows="10"></textarea>
+            <button type="button" id="submitRequirements" class="btn btn-primary">Set Requirements</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Run Orchestration</h2>
+          <label>Python Code</label>
+          <textarea id="pythonCode" placeholder="def add(a, b):&#10;    return a + b&#10;&#10;print(add(5, 3))" rows="8"></textarea>
+
+          <label>Validation (JSON)</label>
+          <textarea id="validationJson" placeholder='{"expectedOutput": "8"}' rows="3"></textarea>
+
+          <button id="runBtn" class="btn btn-primary">Run</button>
+        </section>
+      </div>
+
+      <div class="right-column">
+        <section class="panel">
+          <h2>Results</h2>
+          <div id="resultsPanel" class="results-empty">Results will appear here...</div>
+        </section>
+
+        <section class="panel" id="errorAnalysisPanel" style="display: none;">
+          <h2>📋 Error Analysis</h2>
+          <div id="errorAnalysisContent"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Generated Code</h2>
+          <div id="codeModifiedLabel" style="display: none; margin-bottom: 1rem; color: #f59e0b; font-weight: 600;">🔧 Modified by Claude</div>
+          <pre><code id="generatedCodePanel" class="language-python">No code generated yet</code></pre>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="frontend/dashboard.js"></script>
+</body>
+</html>

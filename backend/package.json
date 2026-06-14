@@ -1,0 +1,26 @@
+{
+  "name": "multi-agent-orchestrator-backend",
+  "version": "1.0.0",
+  "description": "TypeScript/Node HTTP API system orchestrating multi-agent code compilation and patching.",
+  "main": "dist/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server.js",
+    "dev": "tsc -p tsconfig.json && node dist/server.js",
+    "test": "npm run build && node --test dist/tests/**/*.test.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.102.0",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "pg": "^8.21.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.20.0",
+    "typescript": "^5.4.5"
+  }
+}

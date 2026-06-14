@@ -1,0 +1,10 @@
+{
+  "expectedOutput": "8",
+  "expectedType": "number",
+  "testCases": [
+    {
+      "expectedExitCode": 0,
+      "expectedStdoutContains": "8"
+    }
+  ]
+}
